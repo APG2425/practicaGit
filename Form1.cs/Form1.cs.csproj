@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEFFA630-BD59-4B0D-8304-6CF459716A00}</ProjectGuid>
+    <ProjectGuid>{683DCB3D-B9FE-4875-A08A-8EC6AE227C3B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ejercicioTelegrama</RootNamespace>
-    <AssemblyName>ejercicioTelegrama</AssemblyName>
+    <RootNamespace>Form1.cs</RootNamespace>
+    <AssemblyName>Form1.cs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
