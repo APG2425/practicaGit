@@ -34,23 +34,23 @@ namespace ejercicioTelegrama
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string txtTelegrama;
+            string textoTelegrama;
             char tipoTelegrama = ' ';
             int numPalabras = 0;
-            double coste = 0;
+            double coste;
 
-            txtTelegrama = this.txtTelegrama.Text;
+            textoTelegrama = txtTelegrama.Text;
 
-            if (chkUrgente.Checked)
+            if (rbUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
-            else
+            else if (rbOrdinario.Checked)
             {
                 tipoTelegrama = 'o';
             }
 
-            numPalabras = txtTelegrama.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            numPalabras = textoTelegrama.Length;
 
             if (tipoTelegrama == 'o')
             {
@@ -60,22 +60,29 @@ namespace ejercicioTelegrama
                 }
                 else
                 {
-                    coste = 2.5 + 0.5 * (numPalabras - 10);
+                    coste = 0.5 * numPalabras;
                 }
             }
-            else if (tipoTelegrama == 'u')
+            else
             {
-                if (numPalabras <= 10)
+                if (tipoTelegrama == 'u')
                 {
-                    coste = 5;
+                    if (numPalabras <= 10)
+                    {
+                        coste = 5;
+                    }
+                    else
+                    {
+                        coste = 5 + 0.75 * (numPalabras - 10);
+                    }
                 }
                 else
                 {
-                    coste = 5 + 0.75 * (numPalabras - 10);
+                    coste = 0;
                 }
             }
 
-            txtPrecio.Text = coste.ToString("0.00") + " euros";
+            txtPrecio.Text = coste.ToString() + " euros";
         }
     }
     }
